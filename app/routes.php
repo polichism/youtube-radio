@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array('uses' => 'HomeController@getIndex'));
+Route::post('/', array('uses' => 'HomeController@postIndex'));
