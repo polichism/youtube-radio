@@ -20,6 +20,7 @@ class HomeController extends BaseController {
       			'q' => $input['title'],
       			'maxResults' => 5,
     		));
+
 		} catch(Google_ServiceExpetion $e) {
 			Log::info($e->getMessage());
 		}
@@ -30,7 +31,7 @@ class HomeController extends BaseController {
 
 		if(is_object($searchResponse)) {
 			foreach($searchResponse['items'] as $item) {
-				$video_id = $item['id']['videoId'];
+				$video_id = $item['id']->videoId;
 			}
 		}
 

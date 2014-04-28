@@ -11,8 +11,9 @@ function set_next_key() {
 			
 			$(data).find('entry').each(function(){
 				if(random == number) {
-		            key = $(this).find("videoid").text()
-		            $('#youtube_key').val(key);
+		            key = $(this).find("videoid").text();
+
+		            $('#youtube-key').val(key);
 		            return false;
 		        } else {
 		        	number = number + 1;
@@ -34,8 +35,6 @@ function set_next_key() {
 	  // YouTube player after the API code downloads.
 	  var player;
 	  function onYouTubePlayerAPIReady() {
-	  	youtube_key = document.getElementById('youtube-key').value;
-
 	    player = new YT.Player('ytplayer', {
 	      height: '390',
 	      width: '640',
@@ -54,7 +53,9 @@ function set_next_key() {
 
 	  function onytplayerStateChange(newState) {
 	    if(newState.data == 0) {
-	    	player = new YT.Player('ytplayer');
+	    	$('#ytplayer').remove();
+	    	$('#youtube').append('<div id="ytplayer"></div>');
+	    	youtube_key = document.getElementById('youtube-key').value;
 	    	onYouTubePlayerAPIReady();
 	    }
 	  }
