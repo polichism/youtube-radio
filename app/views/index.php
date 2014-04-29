@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Find trackYTRadio</title>
+		<title>YTRadio</title>
 		<link rel="stylesheet" href="/css/default.css">
 
 	</head>
