@@ -1,6 +1,6 @@
 
 function set_next_key() {
-	var random = Math.floor((Math.random()*10)+1);
+	var random = Math.floor((Math.random()*5)+1);
 	var number = 1;
 	if(youtube_key !== '') {
 		$.ajax({
@@ -59,8 +59,5 @@ function set_next_key() {
 	    	onYouTubePlayerAPIReady();
 	    }
 	  }
-
-
-
 	}
 
